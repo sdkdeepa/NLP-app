@@ -97,6 +97,7 @@ Only the rubric requirements related to "Offline Functionality" and "Testing" cr
 
 # Stage 4 - Unit Testing using Jest Framework
 You must have read the rubric item for "Testing" criteria, that says:
+
 _Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test._
 
 [Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the src/client/js directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
@@ -141,10 +142,11 @@ describe("Testing the submit functionality", () => {
 })});
 ```
 You must be wondering about the matchers, and other syntactical information about test blocks. At this point, you must refer to the external resources:
-- Jest - Getting started [here](https://jestjs.io/docs/en/getting-started) - Provides a basic overview, with the help of an example.
-- Jest - matchers [here](https://jestjs.io/docs/en/using-matchers) - Read carefully to identify the suitable matcher for each of your functions.
-- Jest - testing asynchronous code [here](https://jestjs.io/docs/en/asynchronous) - If you have code that runs asynchronously.
-- A tutorial for beginners [here](https://www.valentinog.com/blog/jest/) - A good explanatory tutorial.
+- [Jest - Getting started](https://jestjs.io/docs/en/getting-started) - Provides a basic overview, with the help of an example.
+- [Jest - matchers](https://jestjs.io/docs/en/using-matchers) - Read carefully to identify the suitable matcher for each of your functions.
+- [Jest - testing asynchronous code](https://jestjs.io/docs/en/asynchronous) - If you have code that runs asynchronously.
+- [A tutorial for beginners](https://www.valentinog.com/blog/jest/) - A good explanatory tutorial.
+
 4. Configure an npm script named "test" in package.json to run your tests from the command line:
 ``` javascript
 "scripts": {
@@ -152,12 +154,13 @@ You must be wondering about the matchers, and other syntactical information abou
 }
 ```
 Also, ensure that the "devDependencies" in package.json have a suitable entry for Jest and others, such as, "jest": "^25.3.0",, where the version may vary with time.
+
 5. Run the `npm run test` command.
 
 
 # Stage 5 - Service Workers
-
 The rubric item for "Offline Functionality" criteria says:
+
 _The project must have set up service workers in webpack._
 Go to the webpack config file, and add the setup for service workers. Test that the site should be available even when you stop your local server.
 
