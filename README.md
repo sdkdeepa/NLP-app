@@ -45,24 +45,27 @@ The app should make a successful call to the API on form submission. If this is 
 Information from the API response must show up in the view. It is not enough for the response to be logged to the console or saved in js, etc.
 
 ### Step 1: Signup for an API key
-First, you will need to go [here](https://www.meaningcloud.com/developer/login). Signing up will get you an subscription key. Don't worry, at the time of this course, the API is free to use up to 1000 requests per day or 333 intensive requests. It is free to check how many requests you have remaining for the day.
-
-MeaningCloud API: You can find the API [here] (https://www.meaningcloud.com/developer/sentiment-analysis). Once you create an account with MeaningCloud, you will be given a License Key to start using the API. This API does not require an SDK.
+First, you will need to [go here](https://www.meaningcloud.com/developer/login). Signing up will get you an subscription key. 
+For this project, you can find the [API](https://www.meaningcloud.com/developer/sentiment-analysis). 
 
 ### Step 2: Environment Variables
 
-Next, in server/index.js, you need to declare your API credentials, which will look something like this:
+Next, in `server/index.js`, you need to declare your API credentials, which will look something like this:
+```javascript 
 // You could call it meaningCloudapi, or anything else
 var textapi = new meaningCloud({
   application_key: "your-key"
 });
-If you are using the MeaningCloud API, the process will look pretty similar to the Aylien API process, but you don’t need to use an application_id.
-...But there's a problem with this. We are about to put our personal API keys into a file, but when we push, this file is going to be available PUBLICLY on Github. Private keys, visible publicly, are never a good thing. So, we have to figure out a way to make that not happen.
-The way we will do that is with environment variables. Environment variables are pretty much like normal variables in that they have a name and hold value. The environment variables only belong to your local system and won't be visible when you push your code to a different environment like Github. Follow the steps below to configure environment variables:
-1. Use npm to install the dotenv package - npm install dotenv This will allow us to use environment variables we set in a new file
-2. Create a new `.env` file in the root of your project.
-3. Fill the .env file with your API keys like this:
 ```
+If you are using the MeaningCloud API, you need to use `application_key`
+...But there's a problem with this. We are about to put our personal API keys into a file, but when we push, this file is going to be available PUBLICLY on Github. Private keys, visible publicly, are never a good thing. So, we have to figure out a way to make that not happen. The way we will do that is with environment variables. Environment variables are pretty much like normal variables in that they have a name and hold value. The environment variables only belong to your local system and won't be visible when you push your code to a different environment like Github. Follow the steps below to configure environment variables:
+
+1. Use npm to install the dotenv package - npm install dotenv This will allow us to use environment variables we set in a new file
+
+2. Create a new `.env` file in the root of your project.
+
+3. Fill the .env file with your API keys like this:
+```javascript
 API_ID=**************************
 API_KEY=**************************
 ```
@@ -83,9 +86,8 @@ var textapi = new meaningCloud({
 ```
 Go to your `.gitignore` file, in the project root, and add .env. It will make sure that we don't push our environment variables to Github! If you forget this step, all of the work we did to protect our API keys would become pointless.
 
-
 ### Step 3: Using the API
-We're ready to go! You can also check out the documentation of the MeaningCloud API [here](https://www.meaningcloud.com/developer/sentiment-analysis). MeaningCloud also has several other APIs, which we won’t be using for this project, but feel free to take a look around if you’re curious!
+We're ready to go! You can also check out the documentation of the [MeaningCloud API](https://www.meaningcloud.com/developer/sentiment-analysis). MeaningCloud also has several other APIs, which we won’t be using for this project, but feel free to take a look around if you’re curious!
 
 # Stage 3 - Project Enhancement
 At the current stage, make enhancement in your project code to ensure most of the requirements as mentioned in the project rubric are met. In addition, parse the response body to dynamically fill content on the page.
