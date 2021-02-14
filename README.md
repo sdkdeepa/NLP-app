@@ -40,7 +40,8 @@ If you started this project after July 7, 2020, you will be using the MeaningClo
 
 The project rubric item for "API" criteria says:
 
-The app should make a successful call to the API on form submission. If this is successful, the API keys and response handling were done correctly. You can check that the API keys are found in server.js or a similar node file. It is not acceptable for an API key to be set in a client-facing file (like index.js)
+The app should make a successful call to the API on form submission. If this is successful, the API keys and response handling were done correctly. 
+You can check that the API keys are found in server.js or a similar node file. It is not acceptable for an API key to be set in a client-facing file (like index.js)
 
 Information from the API response must show up in the view. It is not enough for the response to be logged to the console or saved in js, etc.
 
@@ -96,7 +97,7 @@ Only the rubric requirements related to "Offline Functionality" and "Testing" cr
 
 # Stage 4 - Unit Testing using Jest Framework
 You must have read the rubric item for "Testing" criteria, that says:
-<italics> Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test. </italics>
+_Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test._
 
 [Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the src/client/js directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
 
@@ -115,7 +116,7 @@ function handleSubmit(event) {
 export { handleSubmit }
 ```
 
-3. You have to ensure that all your custom functions in src/client/js directory can handle error responses if the user input does not match API requirements. You will write tests in <function_name>.test.js or <function_name>.spec.js file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
+3. You have to ensure that all your custom functions in src/client/js directory can handle error responses if the user input does not match API requirements. You will write tests in `<function_name>.test.js` or `<function_name>.spec.js` file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
 In each test file, the general flow of the test block should be:
 - Import the js file to test
 - Define the input for the function. Note that, to keep it simple, we will not validate the input being provided to the test cases.
@@ -157,7 +158,7 @@ Also, ensure that the "devDependencies" in package.json have a suitable entry fo
 # Stage 5 - Service Workers
 
 The rubric item for "Offline Functionality" criteria says:
-<italics> The project must have set up service workers in webpack.</italics>
+_The project must have set up service workers in webpack._
 Go to the webpack config file, and add the setup for service workers. Test that the site should be available even when you stop your local server.
 
 # Stage 6 - Deployment
