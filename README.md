@@ -10,8 +10,8 @@ The goal of this project is to give you practice with:
 - Creating layouts and page design
 - Service workers
 - Using APIs and creating requests to external URLs
-We have divided the instructions into the following stages, as explained below:
 
+We have divided the instructions into the following stages, as explained below:
 
 # Project details
 
@@ -96,13 +96,14 @@ Only the rubric requirements related to "Offline Functionality" and "Testing" cr
 
 # Stage 4 - Unit Testing using Jest Framework
 You must have read the rubric item for "Testing" criteria, that says:
-Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test.
-Jest is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the src/client/js directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
+<italics> Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test. </italics>
+
+[Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the src/client/js directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
 
 How does it work?
-Install Jest by using `npm install --save-dev jest`
+1. Install Jest by using `npm install --save-dev jest`
 
-Write the custom JS in your src/client/js directory, responsible for the server, and form submission task. For example, assume that the /src/client/js/formHandler.js file has the following function to be tested:
+2. Write the custom JS in your src/client/js directory, responsible for the server, and form submission task. For example, assume that the /src/client/js/formHandler.js file has the following function to be tested:
 ```javascript
 function handleSubmit(event) {
     event.preventDefault()
@@ -114,12 +115,13 @@ function handleSubmit(event) {
 export { handleSubmit }
 ```
 
-You have to ensure that all your custom functions in src/client/js directory can handle error responses if the user input does not match API requirements. You will write tests in <function_name>.test.js or <function_name>.spec.js file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
+3. You have to ensure that all your custom functions in src/client/js directory can handle error responses if the user input does not match API requirements. You will write tests in <function_name>.test.js or <function_name>.spec.js file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
 In each test file, the general flow of the test block should be:
-Import the js file to test
-Define the input for the function. Note that, to keep it simple, we will not validate the input being provided to the test cases.
-Define the expected output
-Check if the function produces the expected output
+- Import the js file to test
+- Define the input for the function. Note that, to keep it simple, we will not validate the input being provided to the test cases.
+- Define the expected output
+- Check if the function produces the expected output
+
 For the example function shown above, /src/client/js/formHandler/handleSubmit(), you can write a test file testFormHandler.spec.js in the __test__ directory, having a test block as:
 ``` javascript
 // Import the js file to test
@@ -142,20 +144,20 @@ You must be wondering about the matchers, and other syntactical information abou
 - Jest - matchers [here](https://jestjs.io/docs/en/using-matchers) - Read carefully to identify the suitable matcher for each of your functions.
 - Jest - testing asynchronous code [here](https://jestjs.io/docs/en/asynchronous) - If you have code that runs asynchronously.
 - A tutorial for beginners [here](https://www.valentinog.com/blog/jest/) - A good explanatory tutorial.
-- Configure an npm script named "test" in package.json to run your tests from the command line:
+4. Configure an npm script named "test" in package.json to run your tests from the command line:
 ``` javascript
 "scripts": {
     "test": "jest"
 }
 ```
-- Also, ensure that the "devDependencies" in package.json have a suitable entry for Jest and others, such as, "jest": "^25.3.0",, where the version may vary with time.
-- Run the `npm run test` command.
+Also, ensure that the "devDependencies" in package.json have a suitable entry for Jest and others, such as, "jest": "^25.3.0",, where the version may vary with time.
+5. Run the `npm run test` command.
 
 
 # Stage 5 - Service Workers
 
 The rubric item for "Offline Functionality" criteria says:
-The project must have set up service workers in webpack.
+<italics> The project must have set up service workers in webpack.</italics>
 Go to the webpack config file, and add the setup for service workers. Test that the site should be available even when you stop your local server.
 
 # Stage 6 - Deployment
