@@ -172,3 +172,5 @@ A great step to take with your finished project would be to deploy it! Unfortuna
 # Other things I added on this project
 
 `npm install --save-dev webpack-bundle-analyzer`
+
+Markup : ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Screen%20Shot%202021-02-15%20at%2012.20.48%20AM.png "bundle analyzer")
