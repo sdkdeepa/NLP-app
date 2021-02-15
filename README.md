@@ -25,12 +25,12 @@ It would be good to first get your basic project up and functioning. Fork the pr
 Follow the steps from the course up to Lesson 4, but do not add Service Workers just yet. We won't need the service workers during development, and having extra caches floating around just means there's more potential for confusion. Just for your quick reference, we installed the following loaders and plugins so far:
 ```javascript
 // Choose the necessary installation for your development mode
-`npm i -D @babel/core @babel/preset-env babel-loader`
-`npm i -D style-loader node-sass css-loader sass-loader`
-`npm i -D clean-webpack-plugin`
-`npm i -D html-webpack-plugin`
-`npm i -D mini-css-extract-plugin`
-`npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
+npm i -D @babel/core @babel/preset-env babel-loader
+npm i -D style-loader node-sass css-loader sass-loader
+npm i -D clean-webpack-plugin
+npm i -D html-webpack-plugin
+npm i -D mini-css-extract-plugin
+npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 ```
 # Stage 2 - Setting up the API
 
