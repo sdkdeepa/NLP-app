@@ -65,7 +65,7 @@ If you are using the MeaningCloud API, you need to use `application_key`
 
 2. Create a new `.env` file in the root of your project.
 
-3. Fill the .env file with your API keys like this:
+3. Fill the `.env` file with your API keys like this:
 ```javascript
 API_ID=**************************
 API_KEY=**************************
@@ -75,10 +75,12 @@ API_KEY=**************************
 const dotenv = require('dotenv');
 dotenv.config();
 ```
-5. If you want to refer the environment variables, try putting a prefix process.env. in front of the variable name in the server/index.js file, an example might look like this:
+5. If you want to refer the environment variables, try putting a prefix `process.env`. in front of the variable name in the `server/index.js` file, an example might look like this:
+```javascript
 console.log(`Your API key is ${process.env.API_KEY}`);
+```
 
-6. The step above is just to help you understand how to refer to an environment variable from your code. In server/index.js, your updated API credential settings should look like this:
+6. The step above is just to help you understand how to refer to an environment variable from your code. In `server/index.js`, your updated API credential settings should look like this:
 ``` javascript
 // You could call it meaningCloudapi, or anything else
 var textapi = new meaningCloud({
@@ -100,12 +102,12 @@ You must have read the rubric item for "Testing" criteria, that says:
 
 _Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test._
 
-[Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the src/client/js directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
+[Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the `src/client/js` directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
 
 How does it work?
 1. Install Jest by using `npm install --save-dev jest`
 
-2. Write the custom JS in your src/client/js directory, responsible for the server, and form submission task. For example, assume that the /src/client/js/formHandler.js file has the following function to be tested:
+2. Write the custom JS in your src/client/js directory, responsible for the server, and form submission task. For example, assume that the `/src/client/js/formHandler.js` file has the following function to be tested:
 ```javascript
 function handleSubmit(event) {
     event.preventDefault()
@@ -117,14 +119,14 @@ function handleSubmit(event) {
 export { handleSubmit }
 ```
 
-3. You have to ensure that all your custom functions in src/client/js directory can handle error responses if the user input does not match API requirements. You will write tests in `<function_name>.test.js` or `<function_name>.spec.js` file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
+3. You have to ensure that all your custom functions in `src/client/js` directory can handle error responses if the user input does not match API requirements. You will write tests in `<function_name>.test.js` or `<function_name>.spec.js` file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
 In each test file, the general flow of the test block should be:
 - Import the js file to test
 - Define the input for the function. Note that, to keep it simple, we will not validate the input being provided to the test cases.
 - Define the expected output
 - Check if the function produces the expected output
 
-For the example function shown above, /src/client/js/formHandler/handleSubmit(), you can write a test file testFormHandler.spec.js in the __test__ directory, having a test block as:
+For the example function shown above, `/src/client/js/formHandler/handleSubmit()`, you can write a test file `testFormHandler.spec.js`in the __test__ directory, having a test block as:
 ``` javascript
 // Import the js file to test
 import { handleSubmit } from "../src/client/js/formHandler"
@@ -153,7 +155,7 @@ You must be wondering about the matchers, and other syntactical information abou
     "test": "jest"
 }
 ```
-Also, ensure that the "devDependencies" in package.json have a suitable entry for Jest and others, such as, "jest": "^25.3.0",, where the version may vary with time.
+Also, ensure that the "devDependencies" in `package.json` have a suitable entry for Jest and others, such as, `"jest": "^25.3.0",`, where the version may vary with time.
 
 5. Run the `npm run test` command.
 
@@ -169,7 +171,7 @@ Go to the webpack config file, and add the setup for service workers. Test that 
 A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
 
 
-# Other things I added on this project
+#### Other things I tried to added on this project
 
 `npm install --save-dev webpack-bundle-analyzer`
 
