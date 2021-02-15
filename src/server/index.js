@@ -4,15 +4,14 @@ const mockAPIResponse = require('./mockAPI.js')
 const dotenv = require('dotenv');
 dotenv.config();
 
-var textapi = new maeaningCloud({
-  application_key: process.env.API_KEY
+/* Global Variables */
+const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
+const API_KEY = process.env.API_KEY;
 
-});
 const app = express()
-
 app.use(express.static('dist'))
 
-console.log(__dirname)
+
 
 app.get('/', function (req, res) {
     // res.sendFile('dist/index.html')
