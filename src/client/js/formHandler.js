@@ -14,3 +14,5 @@ function handleSubmit(event) {
 }
 
 export { handleSubmit }
+
+//const API_KEY = process.env.API_KEY;
