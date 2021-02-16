@@ -10,3 +10,7 @@ input {
     line-height: 16px;
     margin: 10px 0;
 }
+
+input[type=submit] {
+    background-color: orange;
+}
