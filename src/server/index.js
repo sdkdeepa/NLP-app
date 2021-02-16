@@ -1,4 +1,5 @@
 var path = require('path')
+const fetch = require('node-fetch')
 const express = require('express')
 const bodyParser = require('body-parser')
 const mockAPIResponse = require('./mockAPI.js')
@@ -21,32 +22,35 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //Client.checkForUrl(formText)
 
 /* Global Variables */
-const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1?key=";
-const apiKey = process.env.API_KEY
-console.log("Your Api key is ${process.env.API_KEY}");
-
+const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
+const apiKey= process.env.API_KEY
 
 app.get('/', function (req, res) {
-    // res.sendFile('dist/index.html')
-    res.sendFile('dist/index.html')
+  // res.sendFile('dist/index.html')
+  res.sendFile('dist/index.html')
 })
 
 app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
+  res.send(mockAPIResponse)
 })
 
 
 // POST call
-app.post("/add", function(req, res){
-  const text = req.body.name;
-  console.log(`Entered text: ${textInput}`);
-  const response = fetch(apiBaseUrl+ `${API_KEY}&{name}={text}+&lang=en`);
-  const data = response.json()
-  console.log(data)
-  res.send(data)
+app.post("/add", async function (req, res) {
+  const text = req.body.url;
+  console.log(`Entered text: ${text}`);
+  const response = await fetch(apiBaseUrl+`${apiKey}&txt=${text}&lang=en`, {
+    method: "POST"
+  }).then(function (apiRes) {
+    return apiRes.text(); // reference https://daveceddia.com/unexpected-token-in-json-at-position-0/
+  }).then(function (text) {
+    console.log(text);
+  })
+  console.log(response)
+  res.send(response)
 })
 
 // designates what port the app will listen to for incoming requests
 app.listen(8081, function () {
- console.log('MeaningCloud App is running on 8081!')
+  console.log('MeaningCloud App is running on 8081!')
 })
