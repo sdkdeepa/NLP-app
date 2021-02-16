@@ -18,7 +18,7 @@
 
         <main>
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
+                <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
                 </form>
@@ -26,7 +26,11 @@
 
             <section>
                 <strong>Form Results:</strong>
-                <div id="results"></div>
+                <div id="score_tag"></div>
+                <div id="agreement"></div>
+                <div id="subjectivity"></div>
+                <div id="confidence"></div>
+                <div id="irony"></div>
             </section>
         </main>
 
