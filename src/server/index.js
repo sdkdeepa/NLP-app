@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 /* Global Variables */
 const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
 const API_KEY= process.env.API_KEY
-// console.log(`Your API Key is ${process.env.API_KEY}`)
+console.log(`Your API Key is ${process.env.API_KEY}`)
 
 app.get('/', function (req, res) {
   // res.sendFile('dist/index.html')
@@ -42,15 +42,15 @@ app.post('/add', async (req, res) => {
   console.log('server response: ', response);
   const data = await response.json();
   console.log('server side: ', data);
-  const projectData = {
+  const urlData = {
      score_tag: data.score_tag,
      agreement: data.agreement,
      subjectivity: data.subjectivity,
      confidence: data.confidence,
      irony: data.irony
    };
-   console.log(projectData);
-   res.send(projectData);
+   console.log(urlData);
+   res.send(urlData);
   
   });
 
