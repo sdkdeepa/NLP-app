@@ -7,7 +7,7 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value
     if (Client.checkForUrl(formText)){
-        postResults('http://localhost:8080/add', {url: formText})
+        postResults('http://localhost:3000/add', {url: formText})
             .then(function(res){
                 document.getElementById('polarity').innerHTML = `Polarity: ${res.score_tag}`;
                 document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
@@ -32,7 +32,7 @@ const postResults = async (url = "", data = {}) => {
       body: JSON.stringify({data})
     });
     try {
-      const newData = await response.text();
+      const newData = await response.json();
       return newData;
     } catch (error) {
       console.log("error", error);
