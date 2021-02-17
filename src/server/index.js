@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 /* Global Variables */
 const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
 const apiKey= process.env.API_KEY
+// console.log(`Your API Key is ${process.env.API_KEY}`)
 
 app.get('/', function (req, res) {
   // res.sendFile('dist/index.html')
@@ -51,6 +52,6 @@ app.post("/add", async function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-  console.log('MeaningCloud App is running on 8081!')
+app.listen(3000, function () {
+  console.log('MeaningCloud App is running on 3000!')
 })
