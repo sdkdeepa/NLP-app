@@ -23,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 /* Global Variables */
 const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
-const apiKey= process.env.API_KEY
-// console.log(`Your API Key is ${process.env.API_KEY}`)
+const API_KEY= process.env.API_KEY
+console.log(`Your API Key is ${process.env.API_KEY}`)
 
 app.get('/', function (req, res) {
   // res.sendFile('dist/index.html')
@@ -35,16 +35,24 @@ app.get('/test', function (req, res) {
   res.send(mockAPIResponse)
 })
 
-
-// POST call
-app.post("/add", async function (req, res) {
-  const text = req.body.url;
-  console.log(`Entered url: ${text}`);
-  const response = await fetch(apiBaseUrl+`${apiKey}&txt=${text}&lang=en`)
-  const data = await response.json()
-  console.log(data)
-  res.send(data)
-})
+// POST call 
+app.post('/add', async (req, res) => {
+  urlEntry = req.body.url;
+  const response = await fetch(`${apiBaseUrl}${API_KEY}&of=json&txt&model=general&lang=en&url=${req.body.url}`);
+  console.log('server response: ', response);
+  const data = await response.json();
+  console.log('server side: ', data);
+  const urlData = {
+     score_tag: data.score_tag,
+     agreement: data.agreement,
+     subjectivity: data.subjectivity,
+     confidence: data.confidence,
+     irony: data.irony
+   };
+   console.log(urlData);
+   res.send(urlData);
+  
+  });
 
 // designates what port the app will listen to for incoming requests
 app.listen(3000, function () {
