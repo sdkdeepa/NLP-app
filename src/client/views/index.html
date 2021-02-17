@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <!-- removed the css filesnp  -->
-    </head>
-    <body>
 
-        <header>
-            <div class="">
-                Natural Language Processing on Articles
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <!-- removed the css filesnp  -->
+</head>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Enter URL here">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            </section>
+<body>
 
-            <section>
-                <h2> Form Results: </h2>
-                <br >
-                <div id="polarity"></div>
-                <div id="agreement"></div>
-                <div id="subjectivity"></div>
-                <div id="confidence"></div>
-                <div id="irony"></div>
-            </section>
-        </main>
+    <header>
+        <div class="">
+            Natural Language Processing on Articles
+        </div>
+        <div class="">
+            navigation
+        </div>
+    </header>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-        <script type="text/javascript" src="main.js"></script>
-    </body>
+    <main>
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <input id="name" type="text" name="input" value="" placeholder="Enter URL here">
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)">
+            </form>
+        </section>
+
+        <section>
+            <h2> Form Results: </h2>
+            <br>
+            <div id="polarity"></div>
+            <div id="agreement"></div>
+            <div id="subjectivity"></div>
+            <div id="confidence"></div>
+            <div id="irony"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>This is a footer</p>
+    </footer>
+    <script type="text/javascript" src="main.js"></script>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
+
 </html>

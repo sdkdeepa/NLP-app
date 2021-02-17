@@ -1,4 +1,6 @@
-const handleSubmit = require("../client/js/formHandler");
+// Import the js file to test
+import { handleSubmit } from "../src/client/js/formHandler"
+
 describe("Test for submission", () => {
 test('Form is submitted when the URL is valid', () => {
     expect(handleSubmit("https://api.meaningcloud.com/sentiment-2.1?key=")).toBe(true);

@@ -9,7 +9,7 @@ function handleSubmit(event) {
     if (Client.checkForUrl(formText)){
         postResults('http://localhost:3000/add', {url: formText})
             .then(function(res){
-                document.getElementById('polarity').innerHTML = `Polarity: ${res.score_tag}`;
+                document.getElementById('score').innerHTML = `Polarity: ${res.score_tag}`;
                 document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
                 document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
                 document.getElementById('confidence').innerHTML = `Confidence: ${res.confidence}`;
