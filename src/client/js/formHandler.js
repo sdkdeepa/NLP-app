@@ -2,7 +2,7 @@ const { checkForUrl } = require('./validUrl');
 
 const API_KEY = process.env.API_KEY;
 
-function handleSubmit(event) { 
+async function handleSubmit(event) { 
     event.preventDefault()
     // check what text was put into the form field
     let formText = document.getElementById('name').value
@@ -32,7 +32,7 @@ const postResults = async (url = "", data = {}) => {
       body: JSON.stringify({data})
     });
     try {
-      const newData = await response.json();
+      const newData = await response.text();
       return newData;
     } catch (error) {
       console.log("error", error);

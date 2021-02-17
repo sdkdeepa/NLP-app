@@ -41,7 +41,9 @@ app.post("/add", async function (req, res) {
   const text = req.body.url;
   console.log(`Entered url: ${text}`);
   const response = await fetch(apiBaseUrl+`${apiKey}&txt=${text}&lang=en`)
-  res.send(response)
+  const data = await response.json()
+  console.log(data)
+  res.send(data)
 })
 
 // designates what port the app will listen to for incoming requests
