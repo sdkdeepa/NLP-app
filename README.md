@@ -67,7 +67,6 @@ If you are using the MeaningCloud API, you need to use `application_key`
 
 3. Fill the `.env` file with your API keys like this:
 ```javascript
-API_ID=**************************
 API_KEY=**************************
 ```
 4. Add this code to the very top of your server/index.js file:
