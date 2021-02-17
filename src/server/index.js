@@ -39,15 +39,8 @@ app.get('/test', function (req, res) {
 // POST call
 app.post("/add", async function (req, res) {
   const text = req.body.url;
-  console.log(`Entered text: ${text}`);
-  const response = await fetch(apiBaseUrl+`${apiKey}&txt=${text}&lang=en`, {
-    method: "POST"
-  }).then(function (apiRes) {
-    return apiRes.text(); // reference https://daveceddia.com/unexpected-token-in-json-at-position-0/
-  }).then(function (text) {
-    console.log(text);
-  })
-  console.log(response)
+  console.log(`Entered url: ${text}`);
+  const response = await fetch(apiBaseUrl+`${apiKey}&txt=${text}&lang=en`)
   res.send(response)
 })
 
