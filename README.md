@@ -25,12 +25,12 @@ It would be good to first get your basic project up and functioning. Fork the pr
 Follow the steps from the course up to Lesson 4, but do not add Service Workers just yet. We won't need the service workers during development, and having extra caches floating around just means there's more potential for confusion. Just for your quick reference, we installed the following loaders and plugins so far:
 ```javascript
 // Choose the necessary installation for your development mode
-`npm i -D @babel/core @babel/preset-env babel-loader`
-`npm i -D style-loader node-sass css-loader sass-loader`
-`npm i -D clean-webpack-plugin`
-`npm i -D html-webpack-plugin`
-`npm i -D mini-css-extract-plugin`
-`npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin`
+npm i -D @babel/core @babel/preset-env babel-loader
+npm i -D style-loader node-sass css-loader sass-loader
+npm i -D clean-webpack-plugin
+npm i -D html-webpack-plugin
+npm i -D mini-css-extract-plugin
+npm i -D optimize-css-assets-webpack-plugin terser-webpack-plugin
 ```
 # Stage 2 - Setting up the API
 
@@ -40,7 +40,8 @@ If you started this project after July 7, 2020, you will be using the MeaningClo
 
 The project rubric item for "API" criteria says:
 
-The app should make a successful call to the API on form submission. If this is successful, the API keys and response handling were done correctly. You can check that the API keys are found in server.js or a similar node file. It is not acceptable for an API key to be set in a client-facing file (like index.js)
+The app should make a successful call to the API on form submission. If this is successful, the API keys and response handling were done correctly. 
+You can check that the API keys are found in server.js or a similar node file. It is not acceptable for an API key to be set in a client-facing file (like index.js)
 
 Information from the API response must show up in the view. It is not enough for the response to be logged to the console or saved in js, etc.
 
@@ -64,7 +65,7 @@ If you are using the MeaningCloud API, you need to use `application_key`
 
 2. Create a new `.env` file in the root of your project.
 
-3. Fill the .env file with your API keys like this:
+3. Fill the `.env` file with your API keys like this:
 ```javascript
 API_ID=**************************
 API_KEY=**************************
@@ -74,10 +75,12 @@ API_KEY=**************************
 const dotenv = require('dotenv');
 dotenv.config();
 ```
-5. If you want to refer the environment variables, try putting a prefix process.env. in front of the variable name in the server/index.js file, an example might look like this:
+5. If you want to refer the environment variables, try putting a prefix `process.env`. in front of the variable name in the `server/index.js` file, an example might look like this:
+```javascript
 console.log(`Your API key is ${process.env.API_KEY}`);
+```
 
-6. The step above is just to help you understand how to refer to an environment variable from your code. In server/index.js, your updated API credential settings should look like this:
+6. The step above is just to help you understand how to refer to an environment variable from your code. In `server/index.js`, your updated API credential settings should look like this:
 ``` javascript
 // You could call it meaningCloudapi, or anything else
 var textapi = new meaningCloud({
@@ -96,14 +99,15 @@ Only the rubric requirements related to "Offline Functionality" and "Testing" cr
 
 # Stage 4 - Unit Testing using Jest Framework
 You must have read the rubric item for "Testing" criteria, that says:
-<italics> Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test. </italics>
 
-[Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the src/client/js directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
+_Check that the project has Jest installed, that there is an npm script to run Jest, and that the tests all pass. Every src/client/js file should have at least one test._
+
+[Jest](https://jestjs.io/en/) is a framework for testing JavaScript projects. We are interested in the unit-testing of our project. The Jest framework provides us the ability to create, and run unit tests. In general, unit testing means to test the functionality of each unit/component of a project. But, in our case, we will write tests for desired functions defined in the `src/client/js` directory. The tests will check if the functions are behaving expectedly when provided an input. Let's learn to add Jest to your project to handle unit-testing.
 
 How does it work?
 1. Install Jest by using `npm install --save-dev jest`
 
-2. Write the custom JS in your src/client/js directory, responsible for the server, and form submission task. For example, assume that the /src/client/js/formHandler.js file has the following function to be tested:
+2. Write the custom JS in your src/client/js directory, responsible for the server, and form submission task. For example, assume that the `/src/client/js/formHandler.js` file has the following function to be tested:
 ```javascript
 function handleSubmit(event) {
     event.preventDefault()
@@ -115,14 +119,14 @@ function handleSubmit(event) {
 export { handleSubmit }
 ```
 
-3. You have to ensure that all your custom functions in src/client/js directory can handle error responses if the user input does not match API requirements. You will write tests in <function_name>.test.js or <function_name>.spec.js file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
+3. You have to ensure that all your custom functions in `src/client/js` directory can handle error responses if the user input does not match API requirements. You will write tests in `<function_name>.test.js` or `<function_name>.spec.js` file, to be present in a __test__ folder. For each functionality, consider writing a separate test file. The __test__ folder should be present in the project directory.
 In each test file, the general flow of the test block should be:
 - Import the js file to test
 - Define the input for the function. Note that, to keep it simple, we will not validate the input being provided to the test cases.
 - Define the expected output
 - Check if the function produces the expected output
 
-For the example function shown above, /src/client/js/formHandler/handleSubmit(), you can write a test file testFormHandler.spec.js in the __test__ directory, having a test block as:
+For the example function shown above, `/src/client/js/formHandler/handleSubmit()`, you can write a test file `testFormHandler.spec.js`in the __test__ directory, having a test block as:
 ``` javascript
 // Import the js file to test
 import { handleSubmit } from "../src/client/js/formHandler"
@@ -140,24 +144,26 @@ describe("Testing the submit functionality", () => {
 })});
 ```
 You must be wondering about the matchers, and other syntactical information about test blocks. At this point, you must refer to the external resources:
-- Jest - Getting started [here](https://jestjs.io/docs/en/getting-started) - Provides a basic overview, with the help of an example.
-- Jest - matchers [here](https://jestjs.io/docs/en/using-matchers) - Read carefully to identify the suitable matcher for each of your functions.
-- Jest - testing asynchronous code [here](https://jestjs.io/docs/en/asynchronous) - If you have code that runs asynchronously.
-- A tutorial for beginners [here](https://www.valentinog.com/blog/jest/) - A good explanatory tutorial.
+- [Jest - Getting started](https://jestjs.io/docs/en/getting-started) - Provides a basic overview, with the help of an example.
+- [Jest - matchers](https://jestjs.io/docs/en/using-matchers) - Read carefully to identify the suitable matcher for each of your functions.
+- [Jest - testing asynchronous code](https://jestjs.io/docs/en/asynchronous) - If you have code that runs asynchronously.
+- [A tutorial for beginners](https://www.valentinog.com/blog/jest/) - A good explanatory tutorial.
+
 4. Configure an npm script named "test" in package.json to run your tests from the command line:
 ``` javascript
 "scripts": {
     "test": "jest"
 }
 ```
-Also, ensure that the "devDependencies" in package.json have a suitable entry for Jest and others, such as, "jest": "^25.3.0",, where the version may vary with time.
+Also, ensure that the "devDependencies" in `package.json` have a suitable entry for Jest and others, such as, `"jest": "^25.3.0",`, where the version may vary with time.
+
 5. Run the `npm run test` command.
 
 
 # Stage 5 - Service Workers
-
 The rubric item for "Offline Functionality" criteria says:
-<italics> The project must have set up service workers in webpack.</italics>
+
+_The project must have set up service workers in webpack._
 Go to the webpack config file, and add the setup for service workers. Test that the site should be available even when you stop your local server.
 
 # Stage 6 - Deployment
@@ -165,6 +171,8 @@ Go to the webpack config file, and add the setup for service workers. Test that 
 A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
 
 
-# Other things I added on this project
+#### Other things I tried to added on this project
 
 `npm install --save-dev webpack-bundle-analyzer`
+
+Markup : ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Screen%20Shot%202021-02-15%20at%2012.20.48%20AM.png "bundle analyzer")
