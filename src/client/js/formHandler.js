@@ -1,42 +1,44 @@
 const { checkForUrl } = require('./validUrl');
 
-const API_KEY = process.env.API_KEY;
-
-function handleSubmit(event) { 
-    event.preventDefault()
+function handleSubmit(event) {
+    event.preventDefault();
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    if (Client.checkForUrl(formText)){
-        postResults('http://localhost:3000/add', {url: formText})
-            .then(function(res){
-                document.getElementById('score').innerHTML = `Polarity: ${res.score_tag}`;
-                document.getElementById('agreement').innerHTML = `Agreement: ${res.agreement}`;
-                document.getElementById('subjectivity').innerHTML = `Subjectivity: ${res.subjectivity}`;
-                document.getElementById('confidence').innerHTML = `Confidence: ${res.confidence}`;
-                document.getElementById('irony').innerHTML = `Irony:${res.irony}`;
-            })
-    }else {
-        alert("Enter valid url")
-    }
-    }
+    let formText = document.getElementById('name').value;
 
-const postResults = async (url = "", data = {}) => {
-    console.log("Post method is invoked", data);
-    const response = await fetch(url, {
-      method: "POST",
-      credentials: "same-origin",
-      mode: 'no-cors',
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({data})
-    });
-    try {
-      const newData = await response.json();
-      return newData;
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+    if (checkForUrl(formText)) {
+
+    postData(formText)
+    .then(function(res) {
+        console.log('client side response', res);
+        document.getElementById('polarity').innerHTML = `Polarity:${res.score_tag}`;
+        document.getElementById('agreement').innerHTML = `Irony:${res.agreement}`;
+        document.getElementById('subjectivity').innerHTML = `Subjectivity:${res.subjectivity}`;
+        document.getElementById('confidence').innerHTML = `Confidence:${res.confidence}`;
+        document.getElementById('irony').innerHTML = `Irony:${res.irony}`;
+    })
+  } else {
+    alert = "Please enter valid URL";
+}
+}
+
+const postData = async(url ="") => {
+    const response = await fetch('https://www.meaningcloud.com/developer/sentiment-analysis/console/2.1', {
+            method: 'POST',
+            mode: 'no-cors',
+            credentials: 'same-origin',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify( {"url": url }),
+        });
+
+        try {
+            const newData = await response.text();
+            console.log(newData);
+            return newData;
+        } catch (error) {
+            console.log("error", error);
+        }
+}
 
 export { handleSubmit }
