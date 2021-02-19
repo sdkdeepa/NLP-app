@@ -15,8 +15,9 @@ We have divided the instructions into the following stages, as explained below:
 
 # My Project details for the reviewer
 
-1. Followed the lesson module and have created branches accordingly
-2. This project meets the requirements
+ This project meets the requirements
+
+- [X] Followed the lesson module and have created branches (see 8 branches on this repo) accordingly 
 
 - [X] Be set up with Webpack, Express, Node, and Sass, and Service Workers
 
@@ -36,12 +37,27 @@ We have divided the instructions into the following stages, as explained below:
 
 - [X] Be able to show content offline
 
+# Project Video
+
+     https://youtu.be/9B8hTdHAglg
+
+# Screenshots 
+
+1. Terminal output of prod build
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Prod-build-run.png "Terminal output of prod build")
+
+2. Production App
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/prod-env.png "Production App")
+
+3. Terminal logs while running app displaying the metadata
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/terminal-output.png "Terminal logs while running app")
+
 
 #### Other things I tried to added on this project
 
 `npm install --save-dev webpack-bundle-analyzer`
 
-Markup : ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Screen%20Shot%202021-02-15%20at%2012.20.48%20AM.png "bundle analyzer")
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Screen%20Shot%202021-02-15%20at%2012.20.48%20AM.png "bundle analyzer")
 
 # Project Rubric
 
