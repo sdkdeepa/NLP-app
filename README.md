@@ -40,7 +40,7 @@ We have divided the instructions into the following stages, as explained below:
 
 # Project Video
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/https://www.youtube.com/watch?v=9B8hTdHAglg&feature=youtu.be/0.jpg)])(https://www.youtube.com/watch?v=9B8hTdHAglg&feature=youtu.be "project video") 
+https://www.youtube.com/watch?v=9B8hTdHAglg&feature=youtu.be
 
 # Screenshots 
 
