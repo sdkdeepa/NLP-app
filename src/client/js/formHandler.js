@@ -1,4 +1,4 @@
-const { checkForUrl } = require('./validUrl');
+const { checkForUrl } = require('./checkForUrl');
 
 function handleSubmit(event) {
     event.preventDefault();

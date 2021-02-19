@@ -1,4 +1,4 @@
-import { checkForUrl } from './js/validUrl'
+import { checkForUrl } from './js/checkForUrl'
 import { handleSubmit } from './js/formHandler'
 
 import './styles/resets.scss'
