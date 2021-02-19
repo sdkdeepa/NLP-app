@@ -10,9 +10,9 @@ module.exports = {
     devtool: 'source-map',
     stats: 'verbose',
     output: {
-                libraryTarget: 'var',
-                library: 'Client'
-                },
+        libraryTarget: 'var',
+        library: 'Client'
+    },
     module: {
         rules: [
             {
@@ -20,9 +20,9 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: "babel-loader",
             },
-            {   
+            {
                 test: /\.scss$/,
-                use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+                use: ['style-loader', 'css-loader', 'sass-loader']
             }
         ]
     },
@@ -41,6 +41,5 @@ module.exports = {
             protectWebpackAssets: false
         }),
         // new BundleAnalyzerPlugin({}),
-  ]
+    ]
 }
- 
