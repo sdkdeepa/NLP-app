@@ -45,15 +45,19 @@ https://www.youtube.com/watch?v=9B8hTdHAglg&feature=youtu.be
 # Screenshots 
 
 1. Terminal output of prod build
+
 ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Prod-build-run.png "Terminal output of prod build")
 
 2. Production App
+
 ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/prod-env.png "Production App")
 
 3. Terminal logs while running app displaying the metadata
+
 ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/terminal-output.png "Terminal logs while running app")
 
 4. Jest tests output 
+5. 
 ![picture alt](https://github.com/sdkdeepa/FEND-NLP-project4/blob/main/screenshots/Jest-pass.png "Jest tests output")
 
 #### Other things I tried to added on this project
