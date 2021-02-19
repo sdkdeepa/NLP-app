@@ -37,9 +37,10 @@ We have divided the instructions into the following stages, as explained below:
 
 - [X] Be able to show content offline
 
+
 # Project Video
 
-     https://youtu.be/9B8hTdHAglg
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/https://www.youtube.com/watch?v=9B8hTdHAglg&feature=youtu.be/0.jpg)])(https://www.youtube.com/watch?v=9B8hTdHAglg&feature=youtu.be "project video") 
 
 # Screenshots 
 
@@ -214,6 +215,3 @@ Go to the webpack config file, and add the setup for service workers. Test that 
 # Stage 6 - Deployment
 
 A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
-
-
-
