@@ -13,7 +13,60 @@ The goal of this project is to give you practice with:
 
 We have divided the instructions into the following stages, as explained below:
 
-# Project details
+# My Project details for the reviewer
+
+ This project meets the requirements
+
+- [X] Followed the lesson module and have created branches (see 8 branches on this repo) accordingly 
+
+- [X] Be set up with Webpack, Express, Node, and Sass, and Service Workers
+
+- [X] Have separate dev and prod configurations for Webpack
+
+- [X] Have the developer environment set up with the Webpack dev server
+
+- [X] Have a minimum of one form field
+
+- [X] Make one request to the MeaningCloud API
+
+- [X] Use Sass for styling
+
+- [X] Minify js and styles in the production environment
+
+- [X] Response from the API must be added to the view for a user to see 
+
+- [X] Be able to show content offline
+
+
+# Project Video
+
+https://www.youtube.com/watch?v=9B8hTdHAglg&feature=youtu.be
+
+# Screenshots 
+
+1. Terminal output of prod build
+
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Prod-build-run.png "Terminal output of prod build")
+
+2. Production App
+
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/prod-env.png "Production App")
+
+3. Terminal logs while running app displaying the metadata
+
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/terminal-output.png "Terminal logs while running app")
+
+4. Jest tests output 
+5. 
+![picture alt](https://github.com/sdkdeepa/FEND-NLP-project4/blob/main/screenshots/Jest-pass.png "Jest tests output")
+
+#### Other things I tried to added on this project
+
+`npm install --save-dev webpack-bundle-analyzer`
+
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Screen%20Shot%202021-02-15%20at%2012.20.48%20AM.png "bundle analyzer")
+
+# Project Rubric
 
 # Stage 1 - Getting Started - Setting up the Project
 
@@ -67,7 +120,6 @@ If you are using the MeaningCloud API, you need to use `application_key`
 
 3. Fill the `.env` file with your API keys like this:
 ```javascript
-API_ID=**************************
 API_KEY=**************************
 ```
 4. Add this code to the very top of your server/index.js file:
@@ -170,7 +222,6 @@ Go to the webpack config file, and add the setup for service workers. Test that 
 
 A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
 
-
 #### Other things I tried to added on this project
 
 `npm install --save-dev webpack-bundle-analyzer`
@@ -180,3 +231,4 @@ Markup : ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/ma
 ## References 
 
 - https://love2dev.com/blog/how-to-uninstall-a-service-worker/
+

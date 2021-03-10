@@ -38,5 +38,4 @@ const handleSubmit = async (event) => {
     console.error(error);
   }
 };
-
 export { handleSubmit };

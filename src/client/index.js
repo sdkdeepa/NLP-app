@@ -1,4 +1,3 @@
-
 import { validateUserInput } from './js/validateUserInput'
 import { handleSubmit } from './js/formHandler'
 
