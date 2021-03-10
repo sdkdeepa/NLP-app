@@ -1,4 +1,4 @@
-const port = process.env.PORT || 8081;
+const port = 8081;
 const dotenv = require("dotenv");
 dotenv.config();
 var path = require("path");
