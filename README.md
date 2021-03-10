@@ -52,6 +52,10 @@ https://www.youtube.com/watch?v=qO_9ek1iqfE
 
 ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/prod-env.png "Production App")
 
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/refactored.png "Production App Refactored")
+
+![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/refactored2.png "Production App Refactored 2")
+
 3. Terminal logs while running app displaying the metadata
 
 ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/terminal-output.png "Terminal logs while running app")
