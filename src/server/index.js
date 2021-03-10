@@ -1,60 +1,43 @@
-var path = require('path')
-const fetch = require('node-fetch')
-const express = require('express')
-const bodyParser = require('body-parser')
-const mockAPIResponse = require('./mockAPI.js')
-const cors = require("cors")
-const dotenv = require('dotenv')
+const dotenv = require("dotenv");
 dotenv.config();
+var path = require("path");
+const express = require("express");
+var bodyParser = require("body-parser");
+var cors = require("cors");
+const axios = require("axios");
 
-// configure webpack-bundle-analyzer
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const app = express();
+const port = 8081;
+const API_KEY = process.env.API_KEY;
 
-const app = express()
-app.use(express.static('dist'))
-console.log(__dirname)
-app.use(cors())
+app.use(cors());
 // to use json
 app.use(bodyParser.json());
 // to use url encoded values
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
-//Client.checkForUrl(formText)
+app.use(express.static("dist"));
 
-/* Global Variables */
-const apiBaseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
-const API_KEY= process.env.API_KEY
-console.log(`Your API Key is ${process.env.API_KEY}`)
+app.listen(port, () => {
+  console.log(`NLP app listening on port ${port}`);
+  if (process.env.API_KEY) {
+    console.log(`Your API key is ${process.env.API_KEY}`);
+  } else {
+    console.error("Please include a valid API key");
+  }
+});
 
-app.get('/', function (req, res) {
-  // res.sendFile('dist/index.html')
-  res.sendFile('dist/index.html')
-})
+app.get("/", function (req, res) {
+  res.sendFile("dist/index.html");
+});
 
-app.get('/test', function (req, res) {
-  res.send(mockAPIResponse)
-})
-
-// POST call 
-app.post('/add', async (req, res) => {
-  urlEntry = req.body.url;
-  const response = await fetch(`${apiBaseUrl}${API_KEY}&of=json&txt&model=general&lang=en&url=${req.body.url}`);
-  console.log('server response: ', response);
-  const data = await response.json();
-  console.log('server side: ', data);
-  const urlData = {
-     score_tag: data.score_tag,
-     agreement: data.agreement,
-     subjectivity: data.subjectivity,
-     confidence: data.confidence,
-     irony: data.irony
-   };
-   console.log(urlData);
-   res.send(urlData);
-  
-  });
-
-// designates what port the app will listen to for incoming requests
-app.listen(3000, function () {
-  console.log('MeaningCloud App is running on 3000!')
-})
+app.post("/analyze-sentiment", async (req, res) => {
+  const response = await axios.get(
+    `${req.body.BASE_URL}${API_KEY}&lang=${req.body.LANG}&url=${req.body.urlToAnalyzeInput}`
+  );
+  res.send(response.data);
+});

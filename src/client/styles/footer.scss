@@ -1,9 +1,16 @@
-$footercolor: coral;
-footer{
-    color: $footercolor;
-    text-align: right;
-    font-style: italic;
-    font-weight: bolder;
-    text-align: center;
-    
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+footer {
+  background: rgb(87, 143, 212);
+  color: black;
+  height: 70px;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  font-family:'Montserrat';
+}
+
+a {
+  color: blue;
+  text-decoration: none;
 }
