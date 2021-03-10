@@ -5,8 +5,6 @@ const express = require("express");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 const axios = require("axios");
-
-<<<<<<< HEAD
 const app = express();
 const port = 8081;
 const API_KEY = process.env.API_KEY;
