@@ -1,0 +1,46 @@
+/*  for the image and NLP description*/
+.intro-section {
+    margin-top: 75px;
+    position: relative;
+
+    .intro-img {
+        width: 100%;
+        max-width: 100%;
+    }
+        .overlay-text {
+        margin-top: 10px;
+        position: relative;
+        font-size: medium; 
+        p {
+            line-height: 1.5;
+        }
+    }
+}
+
+/* this for the out put of the analysis */
+pre {
+  background: #f0f4f8;
+  color: #102a43;
+  font-family: MONOSPACE;
+  font-size: 16px;
+  padding: 30px;
+  line-height: 1.35;
+  overflow: auto;
+  border-radius: 3px;
+  border-top: 4px solid #2cb1bc;
+  max-height: 800px;
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        float: none;
+
+        .intro-img {
+            display: none;
+        }
+
+        .overlay-text {
+            position: static;
+        }
+    }
+}

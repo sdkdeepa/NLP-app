@@ -1,43 +1,41 @@
-const { checkForUrl } = require('./checkForUrl');
+const handleSubmit = async (event) => {
+  event.preventDefault();
 
-function handleSubmit(event) {
-    event.preventDefault();
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value;
+  // Get the URL and check if it is valid
+  const urlToAnalyzeInput = document.getElementById("urlToAnalyze");
+  const isFormValid = Client.validateUserInput(urlToAnalyzeInput.value);
 
-    if (checkForUrl(formText)) {
-        postData(formText)
-            .then(function (res) {
-                console.log('Posting the data obtained from the server to the client', res);
-                document.getElementById('polarity').innerHTML = `Polarity:${res.score_tag}`;
-                document.getElementById('agreement').innerHTML = `Irony:${res.agreement}`;
-                document.getElementById('subjectivity').innerHTML = `Subjectivity:${res.subjectivity}`;
-                document.getElementById('confidence').innerHTML = `Confidence:${res.confidence}`;
-                document.getElementById('irony').innerHTML = `Irony:${res.irony}`;
-            })
-    } else {
-        alert = "Please enter valid URL";
-    }
-}
-//Post data 
-const postData = async (url = "") => {
-    //fetching the data from /add endpoint
-    const response = await fetch('http://localhost:3000/add', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ "url": url }),
+  if (!isFormValid) {
+    urlToAnalyzeInput.classList.add("error");
+    return;
+  }
+  urlToAnalyzeInput.classList.remove("error");
+
+  // Get the results section ready to insert the data into
+  const resultsSection = document.getElementById("results");
+  resultsSection.innerHTML = `<p>Loading...</p>`;
+
+  // Build the request body to send
+  const requestBody = {
+    BASE_URL: "https://api.meaningcloud.com/sentiment-2.1?key=",
+    LANG: "en",
+    urlToAnalyzeInput: urlToAnalyzeInput.value,
+  };
+
+  // Call the API
+  try {
+    const response = await fetch("/analyze-sentiment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(requestBody),
     });
-    // adding try catch for errors if any
-    try {
-        const newData = await response.json();
-        console.log(newData);
-        return newData;
-    } catch (error) {
-        console.log("error", error);
-    }
-}
-
-export { handleSubmit }
+    const sentimentAnalysisData = await response.json();
+    const dataAsString = JSON.stringify(sentimentAnalysisData, null, 4);
+    resultsSection.innerHTML = `<pre>${dataAsString}</pre>`;
+  } catch (error) {
+    console.error(error);
+  }
+};
+export { handleSubmit };

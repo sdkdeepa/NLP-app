@@ -221,3 +221,14 @@ Go to the webpack config file, and add the setup for service workers. Test that 
 # Stage 6 - Deployment
 
 A great step to take with your finished project would be to deploy it! Unfortunately its a bit out of scope for me to explain too much about how to do that here, but checkout [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/) for some really intuitive free hosting options.
+
+#### Other things I tried to added on this project
+
+`npm install --save-dev webpack-bundle-analyzer`
+
+Markup : ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/Screen%20Shot%202021-02-15%20at%2012.20.48%20AM.png "bundle analyzer")
+
+## References 
+
+- https://love2dev.com/blog/how-to-uninstall-a-service-worker/
+
