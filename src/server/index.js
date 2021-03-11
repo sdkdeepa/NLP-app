@@ -20,8 +20,8 @@ app.use(
 
 app.use(express.static("dist"));
 
-app.listen(PORT, () => {
-  console.log(`NLP app listening on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`NLP app listening on port ${port}`);
   if (process.env.API_KEY) {
     console.log(`Your API key is ${process.env.API_KEY}`);
   } else {
