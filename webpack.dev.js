@@ -14,11 +14,11 @@ module.exports = {
   },
   mode: "development",
   // https://webpack.js.org/configuration/dev-server/#devserverproxy
-  devServer: {
-    proxy: {
-      "/analyze-sentiment": "http://localhost:8081",
-    },
-  },
+  // devServer: {
+  //   proxy: {
+  //     "/analyze-sentiment": "http://localhost:8081",
+  //   },
+  // },
   devtool: "source-map",
   module: {
     rules: [
