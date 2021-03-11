@@ -5,9 +5,11 @@ const express = require("express");
 var bodyParser = require("body-parser");
 var cors = require("cors");
 const axios = require("axios");
-const app = express();
+
 const API_KEY = process.env.API_KEY;
 const port = process.env.PORT || 8081;
+
+const app = express();
 app.use(cors());
 // to use json
 app.use(bodyParser.json());
@@ -19,6 +21,16 @@ app.use(
 );
 
 app.use(express.static("dist"));
+app.get("/", function (req, res) {
+  res.sendFile("dist/index.html");
+});
+
+app.post("/analyze-sentiment", async (req, res) => {
+  const response = await axios.get(
+    `${req.body.BASE_URL}${API_KEY}&lang=${req.body.LANG}&url=${req.body.urlToAnalyzeInput}`
+  );
+  res.send(response.data);
+});
 
 app.listen(port, () => {
   console.log(`NLP app listening on port ${port}`);
@@ -27,15 +39,4 @@ app.listen(port, () => {
   } else {
     console.error("Please include a valid API key");
   }
-});
-
-app.get("/", function (req, res) {
-  res.sendFile(__dirname +"dist/index.html");
-});
-
-app.post("/analyze-sentiment", async (req, res) => {
-  const response = await axios.get(
-    `${req.body.BASE_URL}${API_KEY}&lang=${req.body.LANG}&url=${req.body.urlToAnalyzeInput}`
-  );
-  res.send(response.data);
 });
