@@ -23,8 +23,8 @@ app.use(
 app.use(express.static("dist"));
 
 app.get("/", function (req, res) {
-  res.sendFile('index.html', { root: __dirname });
-  // res.sendFile("dist/index.html");
+
+  res.sendFile("dist/index.html", { root: __dirname });
 });
 
 app.post("/analyze-sentiment", async (req, res) => {
