@@ -1,4 +1,3 @@
-const port = 8081;
 const dotenv = require("dotenv");
 dotenv.config();
 var path = require("path");
@@ -8,7 +7,7 @@ var cors = require("cors");
 const axios = require("axios");
 const app = express();
 const API_KEY = process.env.API_KEY;
-
+const port = process.env.PORT || 8081;
 app.use(cors());
 // to use json
 app.use(bodyParser.json());
@@ -21,8 +20,8 @@ app.use(
 
 app.use(express.static("dist"));
 
-app.listen(port, () => {
-  console.log(`NLP app listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`NLP app listening on port ${PORT}`);
   if (process.env.API_KEY) {
     console.log(`Your API key is ${process.env.API_KEY}`);
   } else {
