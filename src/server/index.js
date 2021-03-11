@@ -30,7 +30,7 @@ app.listen(port, () => {
 });
 
 app.get("/", function (req, res) {
-  res.sendFile("dist/index.html");
+  res.sendFile(__dirname +"dist/index.html");
 });
 
 app.post("/analyze-sentiment", async (req, res) => {
