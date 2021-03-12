@@ -38,9 +38,11 @@ We have divided the instructions into the following stages, as explained below:
 - [X] Be able to show content offline
 
 
-# Project Video
+# Hosted in Heroku
 
-https://www.youtube.com/watch?v=qO_9ek1iqfE
+https://deepa-nlp-app.herokuapp.com/
+
+Video: https://www.youtube.com/watch?v=qO_9ek1iqfE
 
 # Screenshots 
 
@@ -61,7 +63,7 @@ https://www.youtube.com/watch?v=qO_9ek1iqfE
 ![picture alt](https://github.com/sdkdeepa/Udacity-NLP-project4/blob/main/screenshots/terminal-output.png "Terminal logs while running app")
 
 4. Jest tests output 
-5. 
+
 ![picture alt](https://github.com/sdkdeepa/FEND-NLP-project4/blob/main/screenshots/Jest-pass.png "Jest tests output")
 
 #### Other things I tried to added on this project
