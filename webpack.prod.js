@@ -4,12 +4,14 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const Dotenv = require("dotenv-webpack");
 const WorkboxPlugin = require("workbox-webpack-plugin");
+const { mainModule } = require('node:process');
 
 module.exports = {
   entry: "./src/client/index.js",
   output: {
     libraryTarget: "var",
-    library: "Client",  
+    library: "Client", 
+    filename: main.js,
     path: path.resolve(__dirname, "dist"),
   },
   node: {
